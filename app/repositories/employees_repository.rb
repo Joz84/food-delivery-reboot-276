@@ -9,6 +9,10 @@ class EmployeesRepository < BaseRepository
 
   undef_method :add
 
+  def delivery_guys
+    @elements.reject { |element| element.manager? }
+  end
+
   private
 
   def build_element(row)
@@ -19,7 +23,4 @@ class EmployeesRepository < BaseRepository
   def csv_headers
     ['id', 'username', 'password', 'role']
   end
-
-
-
 end

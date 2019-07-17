@@ -19,6 +19,10 @@ class BaseRepository
     save_csv
   end
 
+  def find(id)
+    @elements.find { |element| element.id == id }
+  end
+
   private
 
   def load_csv

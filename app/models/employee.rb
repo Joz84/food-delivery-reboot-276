@@ -16,4 +16,8 @@ class Employee
   def manager?
     @role == "manager"
   end
+
+  def name
+    @username
+  end
 end
